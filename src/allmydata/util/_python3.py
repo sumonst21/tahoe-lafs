@@ -24,6 +24,7 @@ if PY2:
 
 # Keep these sorted alphabetically, to reduce merge conflicts:
 PORTED_MODULES = [
+    "allmydata._monkeypatch",
     "allmydata.codec",
     "allmydata.crypto",
     "allmydata.crypto.aes",
@@ -38,9 +39,14 @@ PORTED_MODULES = [
     "allmydata.immutable.downloader.finder",
     "allmydata.immutable.downloader.node",
     "allmydata.immutable.downloader.segmentation",
+    "allmydata.immutable.downloader.share",
     "allmydata.immutable.downloader.status",
+    "allmydata.immutable.encode",
+    "allmydata.immutable.filenode",
     "allmydata.immutable.happiness_upload",
+    "allmydata.immutable.layout",
     "allmydata.immutable.literal",
+    "allmydata.immutable.upload",
     "allmydata.interfaces",
     "allmydata.introducer.interfaces",
     "allmydata.monitor",
@@ -52,7 +58,6 @@ PORTED_MODULES = [
     "allmydata.storage.mutable",
     "allmydata.storage.server",
     "allmydata.storage.shares",
-    "allmydata.test.common_py3",
     "allmydata.test.no_network",
     "allmydata.uri",
     "allmydata.util._python3",
@@ -71,6 +76,7 @@ PORTED_MODULES = [
     "allmydata.util.hashutil",
     "allmydata.util.humanreadable",
     "allmydata.util.iputil",
+    "allmydata.util.jsonbytes",
     "allmydata.util.log",
     "allmydata.util.mathutil",
     "allmydata.util.namespace",
@@ -84,9 +90,13 @@ PORTED_MODULES = [
 ]
 
 PORTED_TEST_MODULES = [
+    "allmydata.test.mutable.test_datahandle",
+    "allmydata.test.mutable.test_different_encoding",
+    "allmydata.test.mutable.test_filehandle",
     "allmydata.test.test_abbreviate",
     "allmydata.test.test_base32",
     "allmydata.test.test_base62",
+    "allmydata.test.test_checker",
     "allmydata.test.test_codec",
     "allmydata.test.test_common_util",
     "allmydata.test.test_configutil",

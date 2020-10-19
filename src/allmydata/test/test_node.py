@@ -526,7 +526,6 @@ introducer.furl = empty
 enabled = false
 [i2p]
 enabled = false
-[node]
 """
 
 NOLISTEN = """
@@ -572,6 +571,7 @@ class Listeners(unittest.TestCase):
         create_node_dir(basedir, "testing")
         with open(os.path.join(basedir, "tahoe.cfg"), "w") as f:
             f.write(BASE_CONFIG)
+            f.write("[node]\n")
             f.write("tub.port = tcp:0\n")
             f.write("tub.location = AUTO\n")
 
@@ -600,6 +600,7 @@ class Listeners(unittest.TestCase):
         location = "tcp:localhost:%d,tcp:localhost:%d" % (port1, port2)
         with open(os.path.join(basedir, "tahoe.cfg"), "w") as f:
             f.write(BASE_CONFIG)
+            f.write("[node]\n")
             f.write("tub.port = %s\n" % port)
             f.write("tub.location = %s\n" % location)
 
@@ -623,6 +624,7 @@ class Listeners(unittest.TestCase):
         os.mkdir(os.path.join(basedir, "private"))
         with open(config_fname, "w") as f:
             f.write(BASE_CONFIG)
+            f.write("[node]\n")
             f.write("tub.port = listen:i2p,listen:tor\n")
             f.write("tub.location = tcp:example.org:1234\n")
         config = client.read_config(basedir, "client.port")
